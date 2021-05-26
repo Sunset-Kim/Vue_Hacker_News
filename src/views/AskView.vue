@@ -1,9 +1,13 @@
 <template>
-	<div>
-		에스크뷰
-		<div v-for="user in fetchedAsk" v-bind:key="user.id">
-			{{ user.title }}
-		</div>
+	<div class="data-tab">
+		<h2>해커뉴스 탭</h2>
+		<p class="data-item" v-for="item in fetchedAsk" v-bind:key="item.id">
+			<a v-bind:href="item.url">
+				{{ item.title }}
+			</a>
+
+			<small>{{ item.time_ago }}, {{ item.user }}</small>
+		</p>
 	</div>
 </template>
 

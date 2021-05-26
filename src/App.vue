@@ -2,9 +2,7 @@
 	<div id="app">
 		<tool-bar></tool-bar>
 		<div class="container">
-			<div class="row">
-				<router-view class="router-view"></router-view>
-			</div>
+			<router-view class="router-view"></router-view>
 		</div>
 	</div>
 </template>
@@ -20,4 +18,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+:root {
+	/* color */
+	--primary: #42b882;
+	--secondary: #35495e;
+}
+.router-view {
+	flex: 1;
+}
+</style>

@@ -22,7 +22,7 @@ a {
 
 .row {
 	display: flex;
-	/* flex-wrap: wrap; */
+	flex-wrap: wrap;
 }
 
 @media screen and (min-width: 420px) {
