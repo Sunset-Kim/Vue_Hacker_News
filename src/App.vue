@@ -2,7 +2,9 @@
 	<div id="app">
 		<tool-bar></tool-bar>
 		<div class="container">
-			<router-view class="router-view"></router-view>
+			<transition name="page">
+				<router-view class="router-view"></router-view>
+			</transition>
 		</div>
 	</div>
 </template>
@@ -26,5 +28,13 @@ export default {
 }
 .router-view {
 	flex: 1;
+}
+.page-enter-active,
+.page-leave-active {
+	transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+	opacity: 0;
 }
 </style>
