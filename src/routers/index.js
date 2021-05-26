@@ -28,15 +28,12 @@ export const router = new VueRouter({
 			component: JobsView,
 		},
 		{
-			path: '/*',
-			component: NewsView,
-		},
-		{
-			path: '/item',
+			path: '/item/:id',
 			component: ItemView,
 		},
 		{
-			path: '/user',
+			// 동적라우트 매치
+			path: '/user/:id',
 			component: UserView,
 		},
 	],
