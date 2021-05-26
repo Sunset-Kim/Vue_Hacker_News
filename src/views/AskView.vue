@@ -2,11 +2,14 @@
 	<div class="data-tab">
 		<h2>해커뉴스 탭</h2>
 		<p class="data-item" v-for="item in fetchedAsk" v-bind:key="item.id">
-			<a v-bind:href="item.url">
-				{{ item.title }}
-			</a>
+			<router-link v-bind:to="`item/${item.id}`">{{ item.title }}</router-link>
 
-			<small>{{ item.time_ago }}, {{ item.user }}</small>
+			<small
+				>{{ item.time_ago }},
+				<router-link v-bind:to="`user/${item.user}`">{{
+					item.user
+				}}</router-link>
+			</small>
 		</p>
 	</div>
 </template>
