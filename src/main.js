@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import { router } from './router/index';
+import { router } from './routers/index';
 import 'reset-css';
 import '../src/css/initial.css';
 
