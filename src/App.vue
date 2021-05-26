@@ -3,7 +3,6 @@
 		<tool-bar></tool-bar>
 		<div class="container">
 			<div class="row">
-				라우터뷰 페이지
 				<router-view class="router-view"></router-view>
 			</div>
 		</div>
