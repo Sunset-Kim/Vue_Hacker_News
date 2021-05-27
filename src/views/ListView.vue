@@ -1,5 +1,5 @@
 <template>
-	<div class="data-tab">
+	<div>
 		<list-item></list-item>
 	</div>
 </template>

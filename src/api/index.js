@@ -6,16 +6,20 @@ const config = {
 };
 
 // 2. API 함수들 정리
-function fetchNewsList() {
-	return axios.get(`${config.baseUrl}news/1.json`);
-}
+// function fetchNewsList() {
+// 	return axios.get(`${config.baseUrl}news/1.json`);
+// }
 
-function fetchAskList() {
-	return axios.get(`${config.baseUrl}ask/1.json`);
-}
+// function fetchAskList() {
+// 	return axios.get(`${config.baseUrl}ask/1.json`);
+// }
 
-function fetchJobsList() {
-	return axios.get(`${config.baseUrl}jobs/1.json`);
+// function fetchJobsList() {
+// 	return axios.get(`${config.baseUrl}jobs/1.json`);
+// }
+
+function fetchList(pagename) {
+	return axios.get(`${config.baseUrl}${pagename}/1.json`);
 }
 
 function fetchUserInfo(username) {
@@ -28,9 +32,10 @@ function fetchAskItem(id) {
 }
 
 export {
-	fetchNewsList,
-	fetchJobsList,
-	fetchAskList,
+	// fetchNewsList,
+	// fetchJobsList,
+	// fetchAskList,
 	fetchUserInfo,
 	fetchAskItem,
+	fetchList,
 };

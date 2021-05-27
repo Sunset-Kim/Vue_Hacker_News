@@ -2,12 +2,15 @@
 	<div>
 		<div class="main">
 			<h1>{{ askItem.title }}</h1>
-			<div class="userinfo">
-				<router-link :to="`user/${askItem.user}`">{{
-					askItem.user
-				}}</router-link>
-				<span>{{ askItem.time }}</span>
-			</div>
+			<!-- 사용자정보 -->
+			<user-profile>
+				<div class="username" slot="username">
+					<router-link :to="`/user/${askItem.user}`">
+						{{ askItem.user }}
+					</router-link>
+				</div>
+				<div slot="time">{{ askItem.time_ago }}</div>
+			</user-profile>
 			<p class="main-content" v-html="askItem.content"></p>
 		</div>
 		<div
@@ -22,7 +25,11 @@
 </template>
 
 <script>
+import UserProfile from '../components/UserProfile';
 export default {
+	components: {
+		UserProfile,
+	},
 	computed: {
 		askItem() {
 			return this.$store.state.askItem;
@@ -70,5 +77,10 @@ export default {
 }
 .comment p {
 	line-height: 1.3;
+}
+.username {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
 }
 </style>
