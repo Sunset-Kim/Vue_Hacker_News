@@ -16,15 +16,18 @@ export const router = new VueRouter({
 		{
 			// url 주소
 			path: '/news',
+			name: 'news',
 			// url에 해당하는 특정 컴포넌트 경로값
 			component: NewsView,
 		},
 		{
 			path: '/ask',
+			name: 'ask',
 			component: AskView,
 		},
 		{
 			path: '/jobs',
+			name: 'jobs',
 			component: JobsView,
 		},
 		{
