@@ -2,9 +2,7 @@
 	<div id="app">
 		<tool-bar></tool-bar>
 		<div class="container">
-			<transition name="page">
-				<router-view class="router-view"></router-view>
-			</transition>
+			<router-view class="router-view"></router-view>
 			<Spinner :loading="loadingStatus"></Spinner>
 		</div>
 	</div>

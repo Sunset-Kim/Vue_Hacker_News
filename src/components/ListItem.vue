@@ -38,11 +38,16 @@
 </template>
 
 <script>
+import bus from '../utils/bus';
+
 export default {
 	computed: {
 		listItems() {
 			return this.$store.state.list;
 		},
+	},
+	mounted() {
+		bus.$emit('end:spinner');
 	},
 };
 </script>

@@ -8,33 +8,11 @@ import {
 } from '../api/index';
 
 export default {
-	// FETCH_NEWS(context) {
-	// 	return fetchNewsList()
-	// 		.then(response => {
-	// 			context.commit('SET_NEWS', response.data);
-	// 		})
-	// 		.catch(error => {
-	// 			console.log(error);
-	// 		});
-	// },
-
-	// FETCH_ASK(context) {
-	// 	return fetchAskList()
-	// 		.then(response => context.commit('SET_ASK', response.data))
-	// 		.catch(error => console.error(error));
-	// },
-
-	// FETCH_JOBS(context) {
-	// 	return fetchJobsList()
-	// 		.then(response => context.commit('SET_JOBS', response.data))
-	// 		.catch(error => console.error(error));
-	// },
-
 	FETCH_LIST({ commit }, pagename) {
 		return fetchList(pagename)
 			.then(res => {
-				console.log(res);
 				commit('SET_LIST', res.data);
+				return res.data;
 			})
 			.catch(error => console.log(error));
 	},
@@ -46,7 +24,7 @@ export default {
 	},
 
 	FETCH_ASKITEM({ commit }, id) {
-		fetchAskItem(id)
+		return fetchAskItem(id)
 			.then(response => commit('SET_ASKITEM', response.data))
 			.catch(error => console.log(error));
 	},
