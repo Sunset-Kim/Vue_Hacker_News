@@ -1,23 +1,17 @@
 <template>
-	<div>
-		에스크뷰
-		<div v-for="user in users" v-bind:key="user.id">{{ user.title }}</div>
+	<div class="data-tab">
+		<list-item></list-item>
 	</div>
 </template>
 
 <script>
-import { fetchAskList } from '../api/index';
+import ListItem from '../components/ListItem';
+import ListMixin from '../mixins/ListMixin';
 
 export default {
-	data() {
-		return {
-			users: [],
-		};
-	},
-	created() {
-		fetchAskList()
-			.then(response => (this.users = response.data))
-			.catch(error => console.log(error));
+	mixins: [ListMixin],
+	components: {
+		ListItem,
 	},
 };
 </script>

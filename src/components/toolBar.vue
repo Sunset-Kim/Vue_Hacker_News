@@ -18,7 +18,7 @@ export default {};
 .header {
 	height: 8rem;
 	line-height: 8rem;
-	background-color: #42b882;
+	background-color: var(--primary);
 }
 
 a {
@@ -29,14 +29,14 @@ a {
 	margin-right: 3rem;
 }
 a:hover {
-	color: #35495e;
+	color: var(--secondary);
 	transition: 0.3s ease-in-out;
 }
 a:last-child {
 	padding-right: 0;
 }
 .router-link-exact-active {
-	color: #35495e;
+	color: var(--secondary);
 	font-weight: bold;
 }
 </style>
