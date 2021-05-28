@@ -4,6 +4,7 @@ import {
 	fetchJobsList,
 	fetchUserInfo,
 	fetchAskItem,
+	fetchList,
 } from '../api/index';
 
 export default {
@@ -27,6 +28,12 @@ export default {
 		fetchJobsList()
 			.then(response => context.commit('SET_JOBS', response.data))
 			.catch(error => console.error(error));
+	},
+
+	FETCH_LIST(context, routername) {
+		fetchList(routername)
+			.then(response => context.commit('SET_LIST', response.data))
+			.catch(error => console.log(error));
 	},
 
 	FETCH_USERINFO(context, id) {
