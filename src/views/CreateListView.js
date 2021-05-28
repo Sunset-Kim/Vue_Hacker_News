@@ -13,7 +13,8 @@ export default function createListView(name) {
 
 			this.$store
 				.dispatch('FETCH_LIST', this.$route.name)
-				.then(() => {
+				.then(res => {
+					console.log(res);
 					bus.$emit('end:spinner');
 				})
 				.catch(error => {
